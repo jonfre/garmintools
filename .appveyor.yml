@@ -20,8 +20,8 @@ install:
   - ps: (new-object net.webclient).DownloadFile('https://github.com/mesonbuild/cidata/raw/master/ninja.exe', 'C:\ninja-build\ninja.exe')
   # Download libusb
   - cmd: mkdir C:\libusb
-  - ps: (new-object net.webclient).DownloadFile('https://github.com/libusb/libusb/releases/download/v1.0.22/libusb-1.0.22.7z', 'C:\libusb\libusb-1.0.22.7z')
-  - cmd: 7za x -y libusb-1.0.22.7z
+  - ps: (new-object net.webclient).DownloadFile('https://github.com/libusb/libusb/releases/download/v1.0.22/libusb-1.0.22.7z', 'libusb-1.0.22.7z')
+  - cmd: 7z x -y libusb-1.0.22.7z
   # Set paths to dependencies (based on architecture)
   - cmd: if %arch%==x86 (set PYTHON_ROOT=C:\python37) else (set PYTHON_ROOT=C:\python37-x64)
   # Print out dependency paths
