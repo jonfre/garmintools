@@ -11,8 +11,10 @@ install:
   - sudo apt install python3-pip
   - sudo apt install python3-setuptools
   - sudo apt install libusb-1.0-0-dev
+  - sudo apt install clang-9 clang-tools-9
   - pip3 install meson
 
 script:
   - meson builddir --warnlevel 3 --buildtype release
   - ninja -v -C builddir
+  - ninja -v -C builddir scan-build

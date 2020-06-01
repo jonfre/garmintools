@@ -7,3 +7,4 @@ task:
   script:
       - meson builddir --warnlevel 3 --buildtype release
       - ninja -v -C builddir
+      - ninja -v -C builddir scan-build
